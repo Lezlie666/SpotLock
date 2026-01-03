@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - SpotLock</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">SpotLock</div>
+        <div class="nav-user">
+            <span>Welcome, User</span>
+            <a href="index.html" class="btn-logout">Logout</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <a href="#" class="nav-item active">Find Parking</a>
+            <a href="#" class="nav-item">My Bookings</a>
+            <a href="#" class="nav-item">Profile</a>
+            <a href="#" class="nav-item">Help</a>
+        </aside>
+
+        <!-- Content Area -->
+        <main class="main-content">
+            <h1>Find Parking in Madurai</h1>
+            <p class="subtitle">Book your parking spot at popular locations</p>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Locations</h3>
+                    <div class="stat-value">5</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Available Spots</h3>
+                    <div class="stat-value">41</div>
+                </div>
+                <div class="stat-card">
+                    <h3>My Bookings</h3>
+                    <div class="stat-value">2</div>
+                </div>
+                <div class="stat-card">
+                    <h3>My Vehicles</h3>
+                    <div class="stat-value">2</div>
+                </div>
+            </div>
+
+            <!-- My Vehicles -->
+            <div class="card">
+                <h2>My Vehicles</h2>
+                <div class="vehicle-list">
+                    <div class="vehicle-item">
+                        <span class="vehicle-type">Car</span>
+                        <span class="vehicle-number">TN 58 AB 1234</span>
+                        <span class="vehicle-model">Maruti Swift</span>
+                    </div>
+                    <div class="vehicle-item">
+                        <span class="vehicle-type two-wheeler">Bike</span>
+                        <span class="vehicle-number">TN 58 CD 5678</span>
+                        <span class="vehicle-model">Honda Activa</span>
+                    </div>
+                </div>
+                <button class="btn-add">+ Add Vehicle</button>
+            </div>
+
+            <!-- Parking Locations -->
+            <div class="card" style="margin-top: 20px;">
+                <h2>Popular Parking Locations</h2>
+                
+                <!-- Filter -->
+                <div class="filter-row">
+                    <select id="vehicle-filter" class="filter-select">
+                        <option value="all">All Vehicles</option>
+                        <option value="car">Car</option>
+                        <option value="bike">Bike</option>
+                    </select>
+                    <select id="area-filter" class="filter-select">
+                        <option value="all">All Areas</option>
+                        <option value="thallakulam">Thallakulam</option>
+                        <option value="mattuthavani">Mattuthavani</option>
+                        <option value="koodal-nagar">Koodal Nagar</option>
+                        <option value="west-masi">West Masi Street</option>
+                    </select>
+                </div>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Location</th>
+                            <th>Area</th>
+                            <th>Vehicle Type</th>
+                            <th>Available</th>
+                            <th>Rate/Hour</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Vishal De Mall</strong></td>
+                            <td>Thallakulam</td>
+                            <td>Car / Bike</td>
+                            <td><span class="status available">12 Spots</span></td>
+                            <td>Rs. 20 / Rs. 10</td>
+                            <td><button class="btn-book">Book Now</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Vetri Cinemas</strong></td>
+                            <td>Mattuthavani</td>
+                            <td>Car / Bike</td>
+                            <td><span class="status available">8 Spots</span></td>
+                            <td>Rs. 15 / Rs. 5</td>
+                            <td><button class="btn-book">Book Now</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Radiance Cinemas</strong></td>
+                            <td>Koodal Nagar</td>
+                            <td>Car / Bike</td>
+                            <td><span class="status available">15 Spots</span></td>
+                            <td>Rs. 15 / Rs. 5</td>
+                            <td><button class="btn-book">Book Now</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pothys</strong></td>
+                            <td>West Masi Street</td>
+                            <td>Bike Only</td>
+                            <td><span class="status occupied">Full</span></td>
+                            <td>Rs. 5</td>
+                            <td><button class="btn-book" disabled>Full</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>The Chennai Silks</strong></td>
+                            <td>Perumal Mestri Street</td>
+                            <td>Car / Bike</td>
+                            <td><span class="status available">6 Spots</span></td>
+                            <td>Rs. 10 / Rs. 5</td>
+                            <td><button class="btn-book">Book Now</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- My Recent Bookings -->
+            <div class="card" style="margin-top: 20px;">
+                <h2>My Recent Bookings</h2>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Location</th>
+                            <th>Vehicle</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Duration</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Vishal De Mall</td>
+                            <td>TN 58 AB 1234 (Car)</td>
+                            <td>30 Dec 2025</td>
+                            <td>10:00 AM</td>
+                            <td>2 Hours</td>
+                            <td>Rs. 40</td>
+                            <td><span class="status available">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td>Vetri Cinemas</td>
+                            <td>TN 58 CD 5678 (Bike)</td>
+                            <td>28 Dec 2025</td>
+                            <td>04:00 PM</td>
+                            <td>3 Hours</td>
+                            <td>Rs. 15</td>
+                            <td><span class="status completed">Completed</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
