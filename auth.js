@@ -51,7 +51,7 @@ document.getElementById('login-form').onsubmit = function(e) {
             window.location.href = 'dashboard.html';
         }, 800);
     } else {
-        alert('Invalid credentials! Please use:\nEmail: selva@gmail.com\nPassword: 0666');
+        alert('Invalid credentials! Please check your email and password.');
         document.getElementById('login-password').value = '';
     }
 };
